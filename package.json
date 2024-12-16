@@ -19,11 +19,13 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "qs": "^6.13.1",
     "undici": "^7.1.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "@types/node": "^22.10.2",
+    "@types/qs": "^6.9.17",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",

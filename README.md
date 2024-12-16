@@ -1,6 +1,6 @@
 # TSDOCKER-CLIENT
 
-A lightweight and extensible TypeScript library for communicating with the Docker Remote API. Built using [Undici](https://undici.nodejs.org/) for efficient HTTP requests and designed for use in Node.js applications.
+A lightweight and extensible TypeScript library for communicating with the Docker Remote API.
 
 ## Features
 

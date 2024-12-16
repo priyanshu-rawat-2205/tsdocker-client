@@ -1,4 +1,4 @@
-import { DockerModem } from "../modem";
+import { DockerModem } from "../api/modem";
 
 describe("DockerModem", () => {
     it("should construct the correct baseURL", () => {

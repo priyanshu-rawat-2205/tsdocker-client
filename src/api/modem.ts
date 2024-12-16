@@ -1,6 +1,5 @@
 import * as http from 'http'
-import * as https from 'https'
-import { URL } from 'url'
+import * as qs from 'qs';
 
 interface DockerModemConfig {
     socketPath?: string;
@@ -24,14 +23,19 @@ export class DockerModem {
 
     public async request( 
         endpoint: string,
-        method: 'GET' | 'POST' | 'PUT' | 'DELETE'
+        method: 'GET' | 'POST' | 'PUT' | 'DELETE',
+        queryParams?: Record<string, any>
     ): Promise<any>{
         return new Promise((resolve, reject) => {
+
+            const queryString = queryParams ? qs.stringify(queryParams, { arrayFormat: 'brackets'}) : undefined;
+            const fullPath = queryString ? `${endpoint}?${queryString}` : endpoint;
+
             const socketPath = this.socketPath
 
             const options: http.RequestOptions = {
                 socketPath: socketPath,
-                path: endpoint,
+                path: fullPath,
                 method: method, 
                 headers: {
                     'Content-Type': 'application/json',

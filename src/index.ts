@@ -1,3 +1,3 @@
-import { DockerModem } from "./modem";
+import { Docker } from "./docker";
 
-export { DockerModem }
+export { Docker }
