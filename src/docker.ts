@@ -4,8 +4,8 @@ import { Container } from "./api";
 export class Docker {
     private modem: DockerModem;
 
-    constructor(modem: DockerModem){
-        this.modem = modem
+    constructor(socketPath: string){
+        this.modem = new DockerModem({socketPath: socketPath, host: 'localhost'})
     }
 
     public container(): Container {

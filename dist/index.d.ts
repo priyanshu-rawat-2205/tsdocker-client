@@ -1,2 +1,2 @@
-import { DockerModem } from "./modem";
-export { DockerModem };
+import { Docker } from "./docker";
+export { Docker };
