@@ -28,7 +28,7 @@ export class DockerModem {
     ): Promise<any>{
         return new Promise((resolve, reject) => {
 
-            const queryString = queryParams ? qs.stringify(queryParams, { arrayFormat: 'brackets'}) : undefined;
+            const queryString = queryParams ? qs.stringify(queryParams) : undefined;
             const fullPath = queryString ? `${endpoint}?${queryString}` : endpoint;
 
             const socketPath = this.socketPath

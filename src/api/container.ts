@@ -1,10 +1,10 @@
 import { DockerModem } from "./modem";
 
 type ContainerListQuery = {
-    all?: '0' | '1' | 'true' | 'false';
-    limit?: string;
-    filters?: Record<string, any>;
-}
+  all?: '0' | '1' | 'true' | 'false';
+  limit?: string;
+  filters?: string;
+};
 
 
 class ContainerListContext {
@@ -28,7 +28,7 @@ class ContainerListContext {
     }
 
     public filters(value: Record<string, any>): this {
-        this.query.filters = value;
+        this.query.filters = JSON.stringify(value);
         return this;
     }
 
